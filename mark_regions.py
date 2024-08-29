@@ -49,7 +49,7 @@ def mark_regions(image_paths, output_dir):
 
             # Draw rectangles around detected text regions
             print(f"Marking region: x={x}, y={y}, w={w}, h={h}")  # Debug print
-            image = cv2.rectangle(image, (x, y), (x + w, y + h), color=(255, 0, 255), thickness=1)
+            image = cv2.rectangle(image, (x, y), (x + w, y + h), color=(255, 0, 255), thickness=4)
             line_items_coordinates.append([(x, y), (x + w, y + h)])
 
         # Use a fixed name for the marked image
