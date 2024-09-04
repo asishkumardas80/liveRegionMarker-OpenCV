@@ -146,6 +146,10 @@ def draw_contours(image, contours):
     """
     return cv2.drawContours(image.copy(), contours, -1, (0, 255, 0), 2)
 
+# Function to invert colors of an image (if needed)
+def invert_colors(image):
+    return cv2.bitwise_not(image)
+
 # Function to mark regions and apply various image processing techniques
 def mark_regions(image_paths, output_dir, viewer=None):
     """
@@ -169,8 +173,8 @@ def mark_regions(image_paths, output_dir, viewer=None):
             continue
 
         # Invert Colors (commented out as per your request)
-        # inverted_image = invert_colors(image)
-        inverted_image = image
+        inverted_image = invert_colors(image)
+        
 
         # Convert to grayscale for some operations
         gray = convert_to_grayscale(inverted_image)
